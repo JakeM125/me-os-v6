@@ -1,15 +1,17 @@
-local queue = {list = {}}
+local queue = {}
 
-function queue.add(name,count)
-    queue.list[#queue.list+1] = {
-        name=name,
-        count=count,
-        status="pending"
+local jobs = {}
+
+function queue.add(name, count)
+    jobs[#jobs + 1] = {
+        name = name,
+        count = count,
+        status = "pending"
     }
 end
 
 function queue.list()
-    return queue.list
+    return jobs
 end
 
 return queue
